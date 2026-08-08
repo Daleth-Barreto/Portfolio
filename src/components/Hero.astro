@@ -1,0 +1,47 @@
+---
+import { profile } from '../data/profile.js';
+---
+<section class="hero" id="inicio">
+  <div class="ghost-stage" aria-hidden="true">
+    <div class="ghost-card">
+      <canvas class="ghost-canvas" data-ghost></canvas>
+      <span class="ghost-label">self-hosted ghost</span>
+    </div>
+  </div>
+
+  <div class="hero-stickers" aria-hidden="true">
+    <span class="sticker sticker-s1">35+ medals</span>
+    <span class="sticker sticker-s2">ICPC MX · Top 20</span>
+    <span class="sticker sticker-s3">Quantum &gt; coffee</span>
+    <span class="sticker sticker-s4">FPGA · Amaranth</span>
+  </div>
+
+  <div class="hero-inner">
+    <div class="hero-kicker">
+      {profile.role}
+    </div>
+    <h1 class="hero-title">
+      Alan Daleth<br />
+      <span class="accent">Hernández Barreto</span>
+    </h1>
+    <p class="hero-sub">
+      {profile.tagline}
+    </p>
+    <p class="hero-note">
+      From competitive robotics arenas to papers at IEEE and Springer.
+      If it doesn’t run on real hardware, it isn’t done.
+    </p>
+    <div class="hero-cta">
+      <a class="btn btn-solid" href={profile.resume} download>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true">
+          <path d="M12 3v12m0 0 4-4m-4 4-4-4M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        Download CV
+      </a>
+      <a class="btn" href="#trayectoria">View journey →</a>
+    </div>
+    <div>
+      <span class="bubble">Hi! I float, blink and think in qubits.</span>
+    </div>
+  </div>
+</section>

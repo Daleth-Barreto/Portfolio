@@ -1,0 +1,29 @@
+---
+import { stats } from '../data/profile.js';
+---
+<section class="section" id="sobre">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">About</span>
+      <h2>An engineer in training,<br />a <span style="text-decoration: underline; text-decoration-thickness: 4px; text-underline-offset: 6px;">ghost</span> at heart</h2>
+      <p style="color: var(--muted); font-size: 1.1rem; margin-top: 1.4rem;">
+        7th-semester Computer Systems Engineering student (TecNM Zacatepec) and independent researcher in
+        quantum and neuromorphic computing. From competitive robotics arenas to papers accepted at IEEE,
+        Springer, COMIA and bioinformatics conferences.
+      </p>
+      <p style="color: var(--muted); font-size: 1.1rem;">
+        Working philosophy: <i>“If it doesn’t run on real hardware, it isn’t done”</i> and
+        <i>“latency beats elegance.”</i>
+      </p>
+    </div>
+
+    <div class="stats-grid reveal">
+      {stats.map((s) => (
+        <div class="stat">
+          <span class="num">{s.value}</span>
+          <span class="lab">{s.label}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

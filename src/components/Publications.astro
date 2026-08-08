@@ -1,0 +1,27 @@
+---
+import { publications } from '../data/profile.js';
+---
+<section class="section" id="publicaciones">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Research</span>
+      <h2>Publications<br />&amp; conferences</h2>
+      <p style="color: var(--muted); font-size: 1.1rem; margin-top: 1.4rem;">
+        IEEE, Springer, COMIA, MEXCIR and TecNM proceedings. Personal pipeline:
+        Stim → ML/SNN → RTL → FPGA.
+      </p>
+    </div>
+    <div class="reveal">
+      {publications.map((p) => (
+        <div class="pub">
+          <span class="y">{p.year}</span>
+          <div>
+            <h4>{p.title}</h4>
+            <span class="venue">{p.venue}</span>
+          </div>
+          <span class={`st ${p.status === 'Published' ? 'ok' : 'acc'}`}>{p.status}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

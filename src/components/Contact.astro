@@ -1,0 +1,34 @@
+---
+import { profile } from '../data/profile.js';
+
+const socials = [
+  profile.links.github,
+  profile.links.linkedin,
+  profile.links.orcid,
+  profile.links.huggingface,
+  profile.links.codeforces,
+  profile.links.kofi,
+  profile.links.pcbway,
+];
+---
+<section class="section" id="contacto">
+  <div class="wrap" style="text-align: center;">
+    <div class="section-head reveal" style="margin-inline: auto;">
+      <span class="eyebrow">Contact</span>
+      <h2>Let’s talk<br />about ideas?</h2>
+      <p style="color: var(--muted); font-size: 1.15rem; margin-top: 1.4rem;">
+        Projects, research collaborations, robotics or competitive programming.
+        I reply fast… unless I’m debugging.
+      </p>
+    </div>
+    <div class="reveal" style="display: flex; flex-wrap: wrap; gap: 0.9rem; justify-content: center;">
+      <a class="btn btn-solid" href={`mailto:${profile.email}`}>{profile.email}</a>
+      <a class="btn btn-solid" href={profile.resume} download>Download CV</a>
+    </div>
+    <div class="reveal" style="display: flex; flex-wrap: wrap; gap: 0.9rem; justify-content: center; margin-top: 1.6rem;">
+      {socials.map((s) => (
+        <a class="btn" href={s.url} target="_blank" rel="noopener noreferrer">{s.label} ↗</a>
+      ))}
+    </div>
+  </div>
+</section>

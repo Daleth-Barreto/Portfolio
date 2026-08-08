@@ -1,0 +1,21 @@
+---
+import { skills } from '../data/profile.js';
+---
+<section class="section" id="habilidades">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Skills</span>
+      <h2>The full stack</h2>
+    </div>
+    <div class="grid grid-2 reveal">
+      {skills.map((s) => (
+        <div class="skill-block">
+          <h4>{s.group}</h4>
+          <div>
+            {s.items.map((it) => <span class="tag">{it}</span>)}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

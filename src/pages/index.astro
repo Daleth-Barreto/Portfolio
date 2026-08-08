@@ -1,0 +1,35 @@
+---
+import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero.astro';
+import Journey from '../components/Journey.astro';
+import About from '../components/About.astro';
+import Awards from '../components/Awards.astro';
+import Publications from '../components/Publications.astro';
+import Skills from '../components/Skills.astro';
+import Projects from '../components/Projects.astro';
+import Contact from '../components/Contact.astro';
+
+const marqueeItems = ['ROBOTS', 'QUANTUM', 'ICPC', 'RAG', 'FPGA', 'SNN', 'AMARANTH', 'QKD', 'MICROPROCESSORS', 'GCN', 'IEEE', 'ROBOT MAZE'];
+const marqueeRow = [...marqueeItems, ...marqueeItems];
+---
+<Base>
+  <Hero />
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      {marqueeRow.map((m, i) => <span>{m} · </span>)}
+    </div>
+  </div>
+
+  <Journey />
+  <About />
+  <Awards />
+  <Publications />
+  <Skills />
+  <Projects />
+  <Contact />
+</Base>
+
+<script>
+  import '../lib/experience.js';
+</script>

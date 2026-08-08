@@ -1,0 +1,35 @@
+---
+import { profile } from '../data/profile.js';
+
+const socials = [
+  profile.links.github,
+  profile.links.linkedin,
+  profile.links.orcid,
+  profile.links.huggingface,
+  profile.links.codeforces,
+];
+---
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <p style="font-family: var(--font-display); font-weight: 700; font-size: 1.5rem; margin: 0 0 0.4rem; letter-spacing: -0.02em;">
+          {profile.shortName}.dev
+        </p>
+        <p style="margin: 0; max-width: 380px; color: #8f8f8b;">
+          {profile.tagline} · Built with a very optimistic ghost.
+        </p>
+      </div>
+      <div class="links">
+        {socials.map((s) => <a href={s.url} target="_blank" rel="noopener noreferrer">{s.label}</a>)}
+        <a href={profile.resume} download>CV</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© {new Date().getFullYear()} {profile.name}</span>
+      <span>
+        {profile.email} · {profile.location}
+      </span>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,25 @@
+---
+import { awards } from '../data/profile.js';
+---
+<section class="section" id="logros">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Awards</span>
+      <h2>Medals, plaques<br />and <span style="text-decoration: underline; text-decoration-thickness: 4px; text-underline-offset: 6px;">records</span></h2>
+      <p style="color: var(--muted); font-size: 1.1rem; margin-top: 1.4rem;">
+        From school robotics to national competitive programming finals.
+      </p>
+    </div>
+    <div class="award-list reveal">
+      {awards.map((a) => (
+        <div class="award">
+          <span class="year">{a.year}</span>
+          <div>
+            <h4>{a.title}</h4>
+            <p>{a.detail}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

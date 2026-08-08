@@ -1,0 +1,45 @@
+---
+import '../styles/global.css';
+import Menu from '../components/Menu.astro';
+import Footer from '../components/Footer.astro';
+
+const { title, description } = Astro.props;
+const baseTitle = title ?? 'Daleth · Portfolio & Blog';
+const metaDesc = description ?? 'Portfolio and blog of Alan Daleth Hernández Barreto: robotics, quantum computing and competitive programming.';
+---
+<!doctype html>
+<html lang="en" data-mode="simple">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{baseTitle}</title>
+    <meta name="description" content={metaDesc} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <script is:inline>
+      (function () {
+        var saved = null;
+        try {
+          saved = localStorage.getItem('daleth-mode');
+        } catch (e) {}
+        var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var mode = saved || (reduced ? 'simple' : 'experience');
+        document.documentElement.setAttribute('data-mode', mode);
+        document.documentElement.classList.add('js');
+      })();
+    </script>
+  </head>
+  <body>
+    <div class="progress-bar" aria-hidden="true"><i></i></div>
+    <Menu />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
