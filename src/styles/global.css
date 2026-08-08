@@ -748,13 +748,6 @@ html[data-mode='simple'] .journey-progress {
   color: #8a8a86;
 }
 
-.term-ghost {
-  display: inline-block;
-  margin: 0.4rem 0 0.6rem;
-  vertical-align: middle;
-  line-height: 0;
-}
-
 .terminal-body .cursor {
   display: inline-block;
   width: 7px;
